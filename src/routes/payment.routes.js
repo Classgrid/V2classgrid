@@ -559,7 +559,7 @@ router.post("/webhook", express.raw({ type: "application/json" }), async (req, r
                     planExpiresAt: expiresAt,
                     planActivatedAt: activatedNow,
                     razorpaySubscriptionId: paymentId,
-                }, { new: true });
+                }, { returnDocument: 'after' });
 
                 console.log(`[Payment] Webhook: Org ${payment.notes.orgId} upgraded to ${normalized}`);
 
